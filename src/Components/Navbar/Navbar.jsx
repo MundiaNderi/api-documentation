@@ -25,11 +25,11 @@ const Navbar = () => {
         </div>
         {/* Mobile Navbar */}
         {isOpen && (
-          <div className="absolute top-full left-0 bg-white border space-x-10 border-red-500 mt-3 shadow-md py-4">
-            <nav className="">
-              <ul className="list-none border border-red-600">
-                <li className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold  "><Link to="/unsplash">UNSPLASH</Link></li>
-                <li className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold "><Link to="/rickandmorty">RICK & MORTY</Link></li>
+          <div className="absolute top-full transform  bg-white border border-red-500 mt-3 shadow-md py-8 px-8 max-w-md mx-auto">
+            <nav>
+              <ul className="list-none">
+                <li className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold mb-4"><Link to="/unsplash">UNSPLASH</Link></li>
+                <li className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold mb-4"><Link to="/rickandmorty">RICK & MORTY</Link></li>
               </ul>
             </nav>
           </div>

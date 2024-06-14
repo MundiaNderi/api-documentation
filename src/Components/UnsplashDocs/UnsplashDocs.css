@@ -1,0 +1,21 @@
+.search-result {
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.search-result img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Media query for screens smaller than 768px (typical tablet size) */
+@media (max-width: 768px) {
+    .search-result {
+        grid-template-columns: 1fr;
+        /* Two columns layout for tablets */
+    }
+}
