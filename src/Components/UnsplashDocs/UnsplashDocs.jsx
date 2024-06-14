@@ -1,4 +1,3 @@
-// src/components/UnsplashExample.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -7,12 +6,18 @@ const UnsplashDocs = () => {
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const response = await axios.get('https://api.unsplash.com/photos', {
-        headers: {
-          Authorization: 'Client-ID YOUR_ACCESS_KEY'
-        }
-      });
-      setPhotos(response.data);
+      try {
+        const accessKey = import.meta.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+        const response = await axios.get('https://api.unsplash.com/photos', {
+          headers: {
+            Authorization: `Client-ID ${accessKey}`
+          }
+        });
+        console.log(response.data); // Log the data before setting it
+        setPhotos(response.data);
+      } catch (error) {
+        console.error('Error fetching photos:', error);
+      }
     };
     fetchPhotos();
   }, []);

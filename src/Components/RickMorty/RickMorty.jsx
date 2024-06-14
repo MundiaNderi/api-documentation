@@ -1,4 +1,3 @@
-// src/components/RickAndMortyExample.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -14,11 +13,11 @@ const RickMorty = () => {
   }, []);
 
   return (
-    <div>
+    <div className=''>
       <h1>Rick & Morty API Example</h1>
-      <div>
+      <div className='grid grid-cols-1 md:grid-cols-2'>
         {characters.map(character => (
-          <div key={character.id}>
+          <div className='' key={character.id}>
             <img src={character.image} alt={character.name} />
             <p>{character.name}</p>
           </div>

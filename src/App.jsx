@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './Pages/LandingPage';
 import Navbar from './Components/Navbar/Navbar';
 import UnsplashDocs from './Components/UnsplashDocs/UnsplashDocs'
-import RickMoty from './Components/RickMorty/RickMorty'
+import RickMorty from './Components/RickMorty/RickMorty'
+import Footer from './Components/Footer/Footer';
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/unsplash" element={<UnsplashDocs />} />
-        <Route path="/rickandmorty" element={<RickMoty />} />
+        <Route path="/rickandmorty" element={<RickMorty />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
