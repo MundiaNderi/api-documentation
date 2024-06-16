@@ -1,38 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './UnsplashDocs.css'; // Assuming you have custom styles in UnsplashDocs.css
+import './UnsplashDocs.css'; 
 
 const UnsplashDocs = () => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
   const [keyword, setKeyword] = useState('');
 
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        const accessKey = 'YzxOalE1DTHLmqYMPqYNOO7860YCiFgyARoh65C8EjI';
-        const response = await axios.get(`https://api.unsplash.com/photos?page=${page}&query=${keyword}`, {
-          headers: {
-            Authorization: `Client-ID ${accessKey}`
-          }
-        });
-        setPhotos(response.data);
-      } catch (error) {
-        console.error('Error fetching photos:', error);
-      }
-    };
-    fetchPhotos();
-  }, [keyword, page]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPage(1); // Reset page to 1 when submitting the form
-    setKeyword('');
-    fetchPhotos();
+    if (keyword.trim()) {
+      setPage(1);
+      setPhotos([]);
+      fetchPhotos(1, keyword); 
+    }
   };
 
+  const fetchPhotos = async (page, keyword) => {
+    try {
+      const accessKey = 'YzxOalE1DTHLmqYMPqYNOO7860YCiFgyARoh65C8EjI';
+      const response = await axios.get('https://api.unsplash.com/search/photos', {
+        params: { page, query: keyword },
+        headers: {
+          Authorization: `Client-ID ${accessKey}`
+        }
+      });
+      console.log('Response:', response);
+      setPhotos(response.data.results);
+    } catch (error) {
+      console.error('Error fetching photos:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (keyword) {
+      fetchPhotos(page, keyword);
+    }
+  }, [page, keyword]);
+
   const handleShowMore = () => {
-    setPage(page + 1); // Increment page to fetch next set of images
+    setPage(prevPage => prevPage + 1); 
   };
 
   return (
@@ -42,11 +49,12 @@ const UnsplashDocs = () => {
         <input
           type="text"
           id="search-box"
+          name="keyword"
           placeholder="Search anything here..."
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <button className='px-4 p-3 bg-veryDarkBlue text-white rounded-md cursor-pointer'>Search</button>
+        <button type="submit" className='px-4 p-3 bg-veryDarkBlue text-white rounded-md cursor-pointer'>Search</button>
       </form>
       <div className='search-result grid grid-cols-3'>
         {photos.map(photo => (
