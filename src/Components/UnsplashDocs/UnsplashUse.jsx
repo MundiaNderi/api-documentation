@@ -56,7 +56,7 @@ const UnsplashUse = () => {
                 </div>
                 <div className="pb-8">
                     <img
-                        src="src/assets/Developers.jpg"
+                        src="/assets/Developers.jpg"
                         alt="Developers illustration"
                         width={400}
                     />
@@ -104,7 +104,7 @@ const UnsplashUse = () => {
                     </Link>
                 </div>
                 <div className="">
-                    <img src="src/assets/business.jpg" alt="business illustration" />
+                    <img src="/assets/business.jpg" alt="business illustration" />
                 </div>
             </div>
              <hr className="py-2" />
