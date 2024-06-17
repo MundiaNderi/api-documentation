@@ -35,7 +35,7 @@ const Introduction = () => {
             </div>
             <div className="mr-4">
                 <img
-                    src="src/assets/documentation.jpg"
+                    src="/assets/documentation.jpg"
                     className="w-500"
                     alt="Documentation illustration"
                 />

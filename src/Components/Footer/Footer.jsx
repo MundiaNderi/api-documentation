@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LinkedIn from '../../assets/LinkedIn.svg'
-import Twitter from '../../assets/Twitter.svg'
-import Github from '../../assets/Github.svg'
+import LinkedIn from '../../../public/assets/LinkedIn.svg'
+import Twitter from '../../../public/assets/Twitter.svg'
+import Github from '../../../public/assets/Github.svg'
 
 const Footer = () => {
     return (

@@ -38,7 +38,7 @@ const RickMortyUse = () => {
         {/*Image */}
         <div className="">
           <img
-            src="src/assets/Movies.jpg"
+            src="/assets/Movies.jpg"
             alt="Movies illustration"
             width={500}
           />
@@ -65,7 +65,7 @@ const RickMortyUse = () => {
           </Link>
         </div>
         <div className=''>
-          <img src='src/assets/Businesses.jpg' className='w-500' alt='Rick and Morty business illustration' width={1000} />
+          <img src='/assets/Businesses.jpg' className='w-500' alt='Rick and Morty business illustration' width={1000} />
         </div>
       </div>
     </div>

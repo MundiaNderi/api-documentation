@@ -12,7 +12,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className='image'>
-                <img className='' src='/src/assets/hero.png' alt='API Illustration' width="500" />
+                <img className='' src='/assets/hero.png' alt='API Illustration' width="500" />
             </div>
         </div>
     )
