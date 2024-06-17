@@ -1,45 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './UnsplashDocs.css'; 
+import './UnsplashDocs.css';
 
 const UnsplashDocs = () => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
   const [keyword, setKeyword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (keyword.trim()) {
-      setPage(1);
-      setPhotos([]);
-      fetchPhotos(1, keyword); 
-    }
-  };
+  const accessKey = 'YzxOalE1DTHLmqYMPqYNOO7860YCiFgyARoh65C8EjI'; // Replace with your actual Unsplash access key
 
-  const fetchPhotos = async (page, keyword) => {
+  const fetchPhotos = async () => {
+    setLoading(true);
+    setError(null);
+
     try {
-      const accessKey = 'YzxOalE1DTHLmqYMPqYNOO7860YCiFgyARoh65C8EjI';
-      const response = await axios.get('https://api.unsplash.com/search/photos', {
-        params: { page, query: keyword },
+      let url = `https://api.unsplash.com/photos?page=${page}`;
+
+      if (keyword) {
+        url = `https://api.unsplash.com/search/photos?page=${page}&query=${encodeURIComponent(keyword)}`;
+      }
+
+      const response = await axios.get(url, {
         headers: {
           Authorization: `Client-ID ${accessKey}`
         }
       });
-      console.log('Response:', response);
-      setPhotos(response.data.results);
+
+      const data = keyword ? response.data.results : response.data;
+      setPhotos(prevPhotos => [...prevPhotos, ...data]);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching photos:', error);
+      setError(error.message);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (keyword) {
-      fetchPhotos(page, keyword);
-    }
-  }, [page, keyword]);
+    fetchPhotos();
+  }, [keyword, page]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setPage(1);
+    setPhotos([]);
+    fetchPhotos();
+  };
 
   const handleShowMore = () => {
-    setPage(prevPage => prevPage + 1); 
+    setPage(prevPage => prevPage + 1);
   };
 
   return (
@@ -56,16 +67,20 @@ const UnsplashDocs = () => {
         />
         <button type="submit" className='px-4 p-3 bg-veryDarkBlue text-white rounded-md cursor-pointer'>Search</button>
       </form>
-      <div className='search-result grid grid-cols-3'>
-        {photos.map(photo => (
-          <div key={photo.id} className=''>
-            <img src={photo.urls.thumb} alt={photo.description} />
+      {error && <p className='text-red-600 text-center'>Error: {error}</p>}
+      <div className='search-result grid grid-cols-3 gap-4'>
+        {photos.map((photo, index) => (
+          <div key={`${photo.id}-${index}`} className=''>
+            <img src={photo.urls.thumb} alt={photo.alt_description || 'Unsplash Photo'} />
           </div>
         ))}
       </div>
-      <div className='flex mb-4 justify-center'>
-        <button onClick={handleShowMore} className='px-4 py-2 p-3 bg-veryDarkBlue text-white rounded-full'>Show more</button>
-      </div>
+      {!loading && photos.length > 0 && (
+        <div className='flex mb-4 justify-center'>
+          <button onClick={handleShowMore} className='px-4 py-2 p-3 bg-veryDarkBlue text-white rounded-full'>Show more</button>
+        </div>
+      )}
+      {loading && <p className='text-center'>Loading...</p>}
     </div>
   );
 };
