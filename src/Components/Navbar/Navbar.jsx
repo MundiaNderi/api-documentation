@@ -46,9 +46,9 @@ const Navbar = () => {
       </div>
 
       <div className="hidden items-center">
-        <nav className=" items-center gap-2">
+        <nav className=" items-center">
           <ul className="list-none flex items-center">
-            <li className="text-veryDarkBlue border border-red-500 text-sm md:text-lg mr-3 hover:text-desaturatedBlue cursor-pointer font-bold inline-block">
+            <li className="text-veryDarkBlue border border-red-500 text-sm md:text-lg  hover:text-desaturatedBlue cursor-pointer font-bold inline-block">
               <Link to="/unsplash">UNSPLASH</Link>
             </li>
             <li className="text-veryDarkBlue text-sm md:text-lg hover:text-desaturatedBlue cursor-pointer font-bold inline-block">
