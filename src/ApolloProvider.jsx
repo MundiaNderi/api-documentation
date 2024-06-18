@@ -1,3 +1,4 @@
+// ApolloProvider.jsx
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
@@ -7,7 +8,11 @@ const client = new ApolloClient({
 });
 
 const ApolloProviderWrapper = ({ children }) => {
-  return <ApolloProvider client={client}>{children}</ApolloProvider>;
+  return (
+    <ApolloProvider client={client}>
+      {children}
+    </ApolloProvider>
+  );
 };
 
 export default ApolloProviderWrapper;

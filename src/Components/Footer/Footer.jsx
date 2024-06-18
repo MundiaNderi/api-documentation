@@ -6,7 +6,7 @@ import Github from '../../../public/assets/Github.svg'
 
 const Footer = () => {
     return (
-        <footer className="footer bg-lightGrayishBlue py-8 mt-4 border border-red-500 items-center px-4 md:px-32">
+        <footer className="footer bg-lightGrayishBlue py-8 mt-4 items-center px-4 md:px-32">
             <div className="pb-4 md:flex justify-between items-center">
                 <nav className=" ">
                     <ul className="list-none flex flex-col md:flex-row md:justify-between text-center gap-4 items-center">

@@ -17,6 +17,7 @@ This application demonstrates the use cases for the Unsplash and Rick & Morty AP
 - React (for building the frontend)
 - Axios (for making API requests)
 - React Router (for navigation)
+- [Cypress for component testing](https://www.cypress.io)
 - [Freepik Images for illustrations](https://www.freepik.com)
 
 ## Setup Instructions

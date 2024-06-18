@@ -1,0 +1,56 @@
+{
+  "data": {
+    "characters": {
+      "info": {
+        "count": 671,
+        "pages": 34,
+        "next": "https://rickandmortyapi.com/graphql?page=2",
+        "prev": null
+      },
+      "results": [
+        {
+          "id": "1",
+          "name": "Rick Sanchez",
+          "status": "Alive",
+          "species": "Human",
+          "type": "",
+          "gender": "Male",
+          "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+          "created": "2017-11-04T18:48:46.250Z"
+        },
+        {
+          "id": "2",
+          "name": "Morty Smith",
+          "status": "Alive",
+          "species": "Human",
+          "type": "",
+          "gender": "Male",
+          "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+          "created": "2017-11-04T18:50:21.651Z"
+        }
+      ]
+    },
+    "charactersByIds": [
+      {
+        "id": "1",
+        "name": "Rick Sanchez",
+        "status": "Alive",
+        "species": "Human",
+        "type": "",
+        "gender": "Male",
+        "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+        "created": "2017-11-04T18:48:46.250Z"
+      },
+      {
+        "id": "2",
+        "name": "Morty Smith",
+        "status": "Alive",
+        "species": "Human",
+        "type": "",
+        "gender": "Male",
+        "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+        "created": "2017-11-04T18:50:21.651Z"
+      }
+    ]
+  }
+}

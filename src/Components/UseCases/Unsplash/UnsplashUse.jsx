@@ -17,10 +17,7 @@ const UnsplashUse = () => {
                     </p>
                     <ul className="list-disc ml-6 mb-4">
                         <li className=" font-Raleway text-veryDarkBlue py-2">
-                            Create a developer account at
-                            <Link href="https://unsplash.com/documentation#creating-a-developer-account">
-                                Unsplash
-                            </Link>
+                            Create a developer account at Unsplash
                         </li>
                         <li className=" font-Raleway text-veryDarkBlue py-2">
                             Navigate to Your Apps and create a new application{" "}
@@ -35,10 +32,7 @@ const UnsplashUse = () => {
                             Postman
                         </li>
                         <li className=" font-Raleway text-veryDarkBlue py-2">
-                            Search the{" "}
-                            <Link href="https://unsplash.com/documentation">
-                                documentation
-                            </Link>{" "}
+                            Search the documentation
                             for a simple request to start with.
                         </li>
                         <li className=" font-Raleway text-veryDarkBlue py-2">
@@ -107,7 +101,7 @@ const UnsplashUse = () => {
                     <img src="/assets/business.jpg" alt="business illustration" />
                 </div>
             </div>
-             <hr className="py-2" />
+            <hr className="py-2" />
         </div>
     );
 };

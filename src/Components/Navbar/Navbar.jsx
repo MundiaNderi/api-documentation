@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-router-dom";
 
@@ -30,9 +30,9 @@ const Navbar = () => {
         </div>
         {/* Mobile Navbar */}
         {isOpen && (
-          <div className=" absolute flex top-full bg-white mt-4 py-4  items-center mr-10">
+          <div className="absolute flex top-full bg-white mt-4 py-4  items-center">
             <nav className="p-4">
-              <ul className="list-none flex flex-col items-center">
+              <ul className="list-none mr-8 items-center">
                 <li className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold mb-4 inline-block">
                   <Link to="/unsplash">UNSPLASH</Link>
                 </li>
