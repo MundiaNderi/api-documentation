@@ -22,7 +22,7 @@ describe('RickMorty Component', () => {
     cy.intercept('POST', GRAPHQL_URL, (req) => {
       req.reply((res) => {
         res.send({
-          fixture: '../../../cypress/fixtures/characters.json',
+          fixture: 'characters.json',
         });
       });
     });
