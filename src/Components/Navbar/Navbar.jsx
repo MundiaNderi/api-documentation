@@ -10,7 +10,7 @@ const Navbar = () => {
       {/* Home link */}
       <div>
         <Link
-          className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold"
+          className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold  "
           to="/"
         >
           DOCS HUB
@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger menu for mobile */}
-      <div className="md:hidden flex items-center relative">
+      <div className="hidden  items-center relative">
         <div className="ml-4">
           <Hamburger
             toggled={isOpen}
@@ -45,9 +45,24 @@ const Navbar = () => {
         )}
       </div>
 
+      <div className="hidden items-center">
+        <nav className=" items-center gap-2">
+          <ul className="list-none flex items-center">
+            <li className="text-veryDarkBlue border border-red-500 text-sm md:text-lg mr-3 hover:text-desaturatedBlue cursor-pointer font-bold inline-block">
+              <Link to="/unsplash">UNSPLASH</Link>
+            </li>
+            <li className="text-veryDarkBlue text-sm md:text-lg hover:text-desaturatedBlue cursor-pointer font-bold inline-block">
+              <Link to="/rickandmorty">RICK & MORTY</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+
       {/* Desktop Navbar */}
-      <div className="hidden md:flex">
-        <nav className="flex">
+      <div className="flex">
+        <nav className="flex flex-row">
           <ul className="list-none gap-8 flex">
             <li className="text-veryDarkBlue hover:text-desaturatedBlue cursor-pointer font-bold">
               <Link to="/unsplash">UNSPLASH</Link>
@@ -58,6 +73,7 @@ const Navbar = () => {
           </ul>
         </nav>
       </div>
+
 
       {/* Button for large screens */}
       <div className="hidden md:flex">

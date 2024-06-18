@@ -25,6 +25,8 @@ This application demonstrates the use cases for the Unsplash and Rick & Morty AP
 1. Clone the repository.
 2. Install dependencies with `npm install`.
 3. Run the application with `npm start`.
+4. Run headless/on the terminal only Cypress tests with `npx cypress run --component`
+5. Run Cypress tests in Cypress with `npx cypress open`
 
 ## API Documentation
 
