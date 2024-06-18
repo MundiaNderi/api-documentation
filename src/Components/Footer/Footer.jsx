@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LinkedIn from '../../../public/assets/LinkedIn.svg'
-import Twitter from '../../../public/assets/Twitter.svg'
-import Github from '../../../public/assets/Github.svg'
+import LinkedIn from '../../../assets/LinkedIn.svg'
+import Twitter from '../../../assets/Twitter.svg'
+import Github from '../../../assets/Github.svg'
 
 const Footer = () => {
     return (
-        <footer className="footer bg-lightGrayishBlue py-8 mt-4 items-center px-4 md:px-32">
-            <div className="pb-4 md:flex justify-between">
+        <footer className="footer bg-lightGrayishBlue py-8 mt-4  items-center px-4 md:px-32">
+            <div className="pb-4 md:flex justify-between items-center">
                 <nav className=" ">
                     <ul className="list-none flex flex-col md:flex-row md:justify-between text-center gap-4 items-center">
                         <li className="text-veryDarkBlue hover:text-desaturatedBlue  cursor-pointer font-bold"><Link to="/">DOCS HUB</Link></li>
