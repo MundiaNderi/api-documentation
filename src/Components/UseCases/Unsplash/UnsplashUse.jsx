@@ -6,7 +6,7 @@ const UnsplashUse = () => {
         <div className="items-center pt-10 my-8 px-4 md:px-32 ">
             {/*Unsplash for Developers */}
             <hr className="py-2" />
-            <div className="flex flex-col-reverse md:flex-row">
+            <div className="flex flex-col-reverse mb-6 md:flex-row">
                 <div>
                     <h1 className="font-Raleway text-veryDarkBlue font-bold text-3xl">
                         Unsplash API Usage for Developers
