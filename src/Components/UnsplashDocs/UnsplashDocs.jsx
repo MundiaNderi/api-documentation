@@ -9,7 +9,7 @@ const UnsplashDocs = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const accessKey = 'YzxOalE1DTHLmqYMPqYNOO7860YCiFgyARoh65C8EjI'; // Replace with your actual Unsplash access key
+  const accessKey = 'YzxOalE1DTHLmqYMPqYNOO7860YCiFgyARoh65C8EjI'; 
 
   const fetchPhotos = async () => {
     setLoading(true);

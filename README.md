@@ -8,7 +8,6 @@ This application demonstrates the use cases for the Unsplash and Rick & Morty AP
 
 - Fetch and display photos from Unsplash.
 - Search for photos based on keywords.
-- View detailed information for selected photos.
 - Fetch and display characters from Rick & Morty.
 - Search for characters based on their names
 
